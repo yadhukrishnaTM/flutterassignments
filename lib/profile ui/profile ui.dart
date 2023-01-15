@@ -50,28 +50,28 @@ class Profile_UI extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: const [
                 CircleAvatar(
-                  backgroundImage: AssetImage("assets/icons/icons8-facebook-circled-48.png"),
+                  backgroundImage: NetworkImage("assets/icons/icons8-facebook-circled-48.png"),
                   radius: 15,
                   backgroundColor: Colors.white,
                 ),
                 CircleAvatar(
-                  backgroundImage: AssetImage("assets/icons/icons8-twitter-circled-48.png"),
+                  backgroundImage:NetworkImage("assets/icons/icons8-twitter-circled-48.png"),
                   radius: 15,
                   backgroundColor: Colors.white,
                 ),
                 CircleAvatar(
-                  backgroundImage: AssetImage("assets/icons/icons8-linkedin-circled-48.png"),
+                  backgroundImage: NetworkImage("assets/icons/icons8-linkedin-circled-48.png"),
                   radius: 15,
                   backgroundColor: Colors.white,
                 ),
                 CircleAvatar(
-                  backgroundImage: AssetImage("assets/icons/external-github-with-cat-logo-an-online-community-for-software-development-logo-color-tal-revivo.png"),
+                  backgroundImage:NetworkImage("assets/icons/external-github-with-cat-logo-an-online-community-for-software-development-logo-color-tal-revivo.png"),
                   radius: 15,
                   backgroundColor: Colors.white,
                 ),
               ],
             ),
-          ),
+          ),      
           Container(
             margin: const EdgeInsets.only(left: 50, right: 50, top: 30),
             height: 80,
