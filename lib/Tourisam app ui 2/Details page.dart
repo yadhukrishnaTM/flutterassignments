@@ -50,8 +50,8 @@ class details extends StatelessWidget {
                 ),
                 Container(
                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                  height: 90, width: 200,
-                  child: Image(image: NetworkImage("https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVhY2glMjByZXNvcnR8ZW58MHx8MHx8&w=1000&q=80"),),
+                  height: 90, width: 170,
+                  child: Image(image: NetworkImage("https://images.pexels.com/photos/3144580/pexels-photo-3144580.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),),
                   //child: Image.network(details1["image1"]),
                 ),
               ],
@@ -113,16 +113,18 @@ class details extends StatelessWidget {
                 height: 10,
               ),
               Container(
+                height: 200,
+                width: double.infinity,
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                child: Image(image: NetworkImage("https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG90ZWx8ZW58MHx8MHx8&w=1000&q=80"),
+                child: Image(image: NetworkImage("https://images.pexels.com/photos/297985/pexels-photo-297985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
                   fit: BoxFit.fill,),
               ),
               SizedBox(
-                height: 30,
+                height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 300),
-                child: Text("Our Packages",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 20),),
+                child: Text("Our Packages",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 15),),
               )
             ],
           ),
@@ -137,8 +139,8 @@ class details extends StatelessWidget {
                   color: Colors.blueGrey[100],
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
-                height: 50,
-                width: 50,
+                height:40,
+                width: 40,
                 child: Center(
                   child: Text("Adult",
                       style: TextStyle(color: Colors.black)),
@@ -149,8 +151,8 @@ class details extends StatelessWidget {
                   color: Colors.blueGrey[100],
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
-                height: 50,
-                width: 50,
+                height: 40,
+                width: 40,
                 child: Center(
                   child: Text("Child",
                       style: TextStyle(color: Colors.black)),
@@ -161,8 +163,8 @@ class details extends StatelessWidget {
                   color: Colors.blueGrey[100],
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
-                height: 50,
-                width: 50,
+                height: 40,
+                width: 40,
                 child: Center(
                   child: Text("Night",
                       style: TextStyle(color: Colors.black)),
@@ -173,8 +175,8 @@ class details extends StatelessWidget {
                   color: Colors.blueGrey[100],
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
-                height: 50,
-                width: 50,
+                height: 40,
+                width: 40,
                 child: Center(
                   child: Text("Floor",
                       style: TextStyle(color: Colors.black)),
