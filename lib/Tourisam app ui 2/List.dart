@@ -17,7 +17,7 @@ List<Map<String, dynamic>> dummylist = [
   },
   {
     "heading": "Most Luxurious & Peaceful Natural Place",
-    "text": "Furious Place",
+    "text": "Back Waters",
     "image1":
     "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVhY2glMjByZXNvcnR8ZW58MHx8MHx8&w=1000&q=80",
     "image2":
@@ -25,7 +25,7 @@ List<Map<String, dynamic>> dummylist = [
   },
   {
     "heading": "Most Luxurious & Peaceful Natural Place",
-    "text": "Nature Look",
+    "text": "Attractive Nature",
     "image1":
     "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVhY2glMjByZXNvcnR8ZW58MHx8MHx8&w=1000&q=80",
     "image2":
