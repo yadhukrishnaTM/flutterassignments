@@ -130,8 +130,8 @@ class Tourismlist extends StatelessWidget {
     "https://images.pexels.com/photos/117843/pexels-photo-117843.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   ];
   List<String> title = [
-    "Famous Place",
-    "Luxury Place",
+    "Awsome place",
+    "Attractive Place",
     "Furious Place",
     "Nature Look"
   ];
