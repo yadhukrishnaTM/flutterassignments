@@ -1,187 +1,244 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
+    home: Farmers_Fresh(),
     debugShowCheckedModeBanner: false,
     theme: ThemeData(primarySwatch: Colors.green),
-    home: Farmer(),
   ));
 }
 
-class Farmer extends StatefulWidget {
+class Farmers_Fresh extends StatefulWidget {
   @override
-  State<Farmer> createState() => _FarmerState();
+  State<Farmers_Fresh> createState() => _Farmers_FreshState();
+
 }
 
-class _FarmerState extends State<Farmer> {
+class _Farmers_FreshState extends State<Farmers_Fresh> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            title: const Text(
-              'FARMERS FRESH ZONE',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
+            title: Text("FARMERS FRESH ZONE",
+              style: TextStyle(fontWeight: FontWeight.bold),),
             floating: true,
             pinned: true,
             actions: const [
               Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Icon(Icons.location_on_outlined)),
+                padding: EdgeInsets.only(left: 20),
+                child: Icon(Icons.location_on_outlined),
+              ),
               Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Center(
-                      child: Text(
-                        "Kochi",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ))),
+                padding: EdgeInsets.only(left: 10, top: 18),
+                child: Text("Kochi", style: TextStyle(fontSize: 20),),
+              ),
+              Icon(Icons.keyboard_arrow_down_outlined)
             ],
             bottom: AppBar(
-              elevation: 0,
               title: Container(
-                color: Colors.white,
-                width: double.infinity,
+                color: Colors.green[100],
                 height: 40,
                 child: const Center(
                   child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Search for vegetables and fruits..',
-                        prefixIcon: Icon(Icons.search),
-                      )),
+                    decoration: InputDecoration(
+                        hintText: 'Search for Vegetables and Fruits...',
+                        prefixIcon: Icon(Icons.search_sharp)
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
           SliverList(
-            delegate: SliverChildListDelegate([
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.greenAccent,
-                      ),
-                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+              delegate: SliverChildListDelegate(
+                  [
+                    SizedBox(
+                      height: 10,
                     ),
-                    height: 20,
-                    width: 115,
-                    child: const Center(
-                      child: Text(
-                        "VEGETABLES",
-                        style: TextStyle(color: Colors.greenAccent),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.greenAccent,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.green[100],
+                            border: Border.all(
+                                color: Colors.green
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                          height: 20,
+                          width: 100,
+                          child: Center(
+                            child: Text("VEGETABLES",
+                                style: TextStyle(color: Colors.green)),
+                          ),
                         ),
-                        borderRadius:
-                        const BorderRadius.all(Radius.circular(20))),
-                    height: 20,
-                    width: 115,
-                    child: const Center(
-                      child: Text(
-                        "FRUITS",
-                        style: TextStyle(color: Colors.greenAccent),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.greenAccent,
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.green[100],
+                            border: Border.all(
+                                color: Colors.green
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                          height: 20,
+                          width: 80,
+                          child: Center(
+                            child: Text("FRUITS",
+                                style: TextStyle(color: Colors.green)),
+                          ),
                         ),
-                        borderRadius:
-                        const BorderRadius.all(Radius.circular(20))),
-                    height: 20,
-                    width: 115,
-                    child: const Center(
-                      child: Text(
-                        "EXOTIC CUTS",
-                        style: TextStyle(color: Colors.greenAccent),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.green[100],
+                            border: Border.all(
+                                color: Colors.green
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                          height: 20,
+                          width: 80,
+                          child: Center(
+                            child: Text("EXOTIC",
+                                style: TextStyle(color: Colors.green)),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.green[100],
+                            border: Border.all(
+                                color: Colors.green
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                          height: 20,
+                          width: 100,
+                          child: Center(
+                            child: Text("FRESH CUTS",
+                                style: TextStyle(color: Colors.green)),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    CarouselSlider(items: [Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.zero,
+                          image: DecorationImage(
+                              image: NetworkImage(
+                                  "https://images.pexels.com/photos/1656663/pexels-photo-1656663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                              ), fit: BoxFit.cover
+                          )
                       ),
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 12,
-              ),
-              Image.network(
-                  "https://images.pexels.com/photos/1656663/pexels-photo-1656663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-              const SizedBox(
-                height: 12,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    //color: Colors.grey,
-                    border: Border.all(width: 1),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        children: const [
-                          Icon(Icons.timer_3),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text("30 mins ploicy")
-                        ],
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                    "https://media.istockphoto.com/id/995518546/photo/assortment-of-colorful-ripe-tropical-fruits-top-view.jpg?b=1&s=170667a&w=0&k=20&c=frnzxYjtn8MP9kpLy7AY2DU_s9ohVBlAflpUacaDx7w="
+                                ), fit: BoxFit.cover
+                            )
+                        ),
                       ),
-                      Column(
-                        children: const [
-                          Icon(Icons.camera_front_outlined),
-                          SizedBox(
-                            height: 9,
-                          ),
-                          Text("Traceability")
-                        ],
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                    "https://media.istockphoto.com/id/1310236336/photo/assortment-of-fresh-exotic-fruits-as-background-top-view.jpg?b=1&s=170667a&w=0&k=20&c=4_bf1uy2ipCKar7jCqpeBC1MVTi3yasIyCAzFOOfU4c="
+                                ), fit: BoxFit.cover
+                            )
+                        ),
                       ),
-                      Column(
-                        children: const [
-                          Icon(Icons.home_work),
-                          SizedBox(
-                            height: 9,
-                          ),
-                          Text("Local Sourrounding")
-                        ],
+                    ], options: CarouselOptions(
+                        autoPlay: true,
+                        viewportFraction: 1,
+                        height: 250,
+                        enlargeCenterPage: true,
+                        aspectRatio: 16 / 9,
+                        autoPlayCurve: Curves.bounceOut,
+                        autoPlayAnimationDuration: Duration(milliseconds: 80),
+                        enableInfiniteScroll: true
+                    ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 1, color: Colors.grey),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Column(
+                              children: [
+                                Icon(Icons.timer, color: Colors.green,),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text("30 MINS POLICY", style: TextStyle(
+                                    color: Colors.green)
+                                )
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Icon(Icons.cell_tower_sharp, color: Colors
+                                    .green),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text("TRACEABILITY", style: TextStyle(
+                                    color: Colors.green)
+                                )
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Icon(Icons.add_home_work_rounded, color: Colors
+                                    .green),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text("LOCAL SOURCING", style: TextStyle(
+                                    color: Colors.green)
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
-                    ],
-                  ),
-                ),
+                    )
+                  ]
               )
-            ]),
           ),
-          SliverList(
-            delegate: SliverChildListDelegate([
-              const SizedBox(
-                height: 9,
-              ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  "Shop by Category",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          SliverList(delegate: SliverChildListDelegate(
+              [
+                SizedBox(
+                  height: 10,
                 ),
-              ),
-              const SizedBox(
-                height: 9,
-              ),
-              VegGrid(),
-            ]),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Shop By Category", style: TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Vegetables_grid(),
+              ]
+          )
           ),
         ],
       ),
@@ -190,19 +247,19 @@ class _FarmerState extends State<Farmer> {
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
-                color: Colors.greenAccent,
+                color: Colors.green,
               ),
               label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.shopping_cart,
-                color: Colors.greenAccent,
+                color: Colors.green,
               ),
               label: 'Cart'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.person,
-                color: Colors.greenAccent,
+                color: Colors.green,
               ),
               label: 'Account')
         ],
@@ -211,60 +268,54 @@ class _FarmerState extends State<Farmer> {
   }
 }
 
-class VegGrid extends StatelessWidget {
-  List<String> images = [
+class Vegetables_grid extends StatelessWidget {
+  List<String>images = [
     "https://images.pexels.com/photos/1367243/pexels-photo-1367243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/594137/pexels-photo-594137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/1656664/pexels-photo-1656664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/1334131/pexels-photo-1334131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg",
-    "https://images.pexels.com/photos/3091619/pexels-photo-3091619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/3091619/pexels-photo-3091619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   ];
-
-  List<String> names = [
-    "Vegetables",
-    "Fruits",
-    "Exotic",
-    "Fresh cut",
-    "Nutrition Charged",
-    "Packed Flavours"
-  ];
+  List<String> name = [
+    "Offers", "Vegetables", "Fruits",
+    "Exotic", "Fresh Cuts", "Nutrition Chargers",
+    "Packed Flavours", "Gourmet Salads", "Organic Items"];
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
         shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
         padding: const EdgeInsets.all(10.0),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, crossAxisSpacing: 10, mainAxisSpacing: 5),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3, crossAxisSpacing: 2, mainAxisSpacing: 2),
         itemCount: images.length,
         itemBuilder: (BuildContext, int index) {
           return Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                // height: 90,
-                //width: 120,
-                height: MediaQuery.of(context).size.height / 5,
-                width: MediaQuery.of(context).size.width * .3,
-                decoration: BoxDecoration(
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.black,
-                      blurRadius: 20.0,
+              Column(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height / 10,
+                    width: MediaQuery.of(context).size.width * .3,
+                    decoration: BoxDecoration(
+                      boxShadow: [BoxShadow(color: Colors.green,blurRadius: 8,),],
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(images[index])),
                     ),
-                  ],
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                      fit: BoxFit.cover, image: NetworkImage(images[index])),
-                ),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Container(child: Center(child: Text(name[index]))),
+                ],
               ),
-              const SizedBox(
-                height: 8,
-              ),
-              Text(names[index]),
-             ],
+            ],
           );
         });
   }
